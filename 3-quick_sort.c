@@ -8,6 +8,7 @@
 void quick_sort(int *array, size_t size)
 {
 	int low = 0, high = size - 1;
+
 	quick_r(array, low, high, size);
 }
 /**
@@ -36,6 +37,7 @@ void quick_r(int *array, int low, int high, size_t size)
  * @size: Number of elements in @array
  * @low: first element of the array
  * @high: last element of the array
+ * Return: high
  */
 
 int partition(int *array, int low, int high, size_t size)
