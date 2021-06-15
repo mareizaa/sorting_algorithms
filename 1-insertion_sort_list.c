@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * insertion_sort_list - sorts an array of integers using the insertion sort algorithm
+ * insertion_sort_list - sorts an array whit insertion sort algorithm
  * @list: Double pointer linked list
  */
 
@@ -32,7 +32,7 @@ void insertion_sort_list(listint_t **list)
 }
 
 /**
- * insertion_sort_list - sorts an array of integers using the insertion sort algorithm
+ * node_swap - exchanges nodes
  * @list: Double pointer linked list
  * @previous: Nodo previous
  * @act: Nodo current
