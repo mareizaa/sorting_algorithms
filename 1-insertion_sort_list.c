@@ -33,7 +33,6 @@ void insertion_sort_list(listint_t **list)
 
 /**
  * node_swap - exchanges nodes
- * @list: Double pointer linked list
  * @previous: Nodo previous
  * @act: Nodo current
  */
