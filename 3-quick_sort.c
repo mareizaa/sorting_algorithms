@@ -7,10 +7,12 @@
 
 void quick_sort(int *array, size_t size)
 {
-	int low = 0, high = size - 1;
+	int low = 0, high;
 
-	if (array == NULL)
+	if (array == NULL || size < 2)
 		return;
+
+	high = size - 1;
 	quick_r(array, low, high, size);
 }
 /**
@@ -59,7 +61,7 @@ int partition(int *array, int low, int high, size_t size)
 			}
 		}
 	}
-	if (j + 1 != high)
+	if (array[j + 1] > array[high])
 	{
 		tmp = array[j + 1];
 		array[j + 1] = array[high];
