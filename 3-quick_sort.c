@@ -26,7 +26,6 @@ void quick_r(int *array, int low, int high, size_t size)
 	if (low < high)
 	{
 		p = partition(array, low, high, size);
-		print_array(array, size);
 		quick_r(array, low, p - 1, size);
 		quick_r(array, p + 1, high, size);
 	}
@@ -42,7 +41,6 @@ void quick_r(int *array, int low, int high, size_t size)
 
 int partition(int *array, int low, int high, size_t size)
 {
-	(void)size;
 	int j = (low - 1), pivot = array[high], i, tmp;
 
 	for (i = low; i <= high - 1; i++)
@@ -50,13 +48,21 @@ int partition(int *array, int low, int high, size_t size)
 		if (array[i] < pivot)
 		{
 			j++;
-			tmp = array[j];
-			array[j] = array[i];
-			array[i] = tmp;
+			if (j != i)
+			{
+				tmp = array[j];
+				array[j] = array[i];
+				array[i] = tmp;
+				print_array(array, size);
+			}
 		}
 	}
-	tmp = array[j + 1];
-	array[j + 1] = array[high];
-	array[high] = tmp;
+	if (j + 1 != high)
+	{
+		tmp = array[j + 1];
+		array[j + 1] = array[high];
+		array[high] = tmp;
+		print_array(array, size);
+	}
 	return (j + 1);
 }
